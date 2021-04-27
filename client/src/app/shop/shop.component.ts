@@ -4,7 +4,6 @@ import { IProduct } from '../shared/models/product';
 import { IType } from '../shared/models/productTypes';
 import { ShopService } from './shop.service';
 import { ShopParams } from '../shared/models/shopParams';
-import { registerLocaleData } from '@angular/common';
 
 @Component({
   selector: 'app-shop',
@@ -12,7 +11,7 @@ import { registerLocaleData } from '@angular/common';
   styleUrls: ['./shop.component.scss'],
 })
 export class ShopComponent implements OnInit {
-  @ViewChild('search', { static: true }) searchTerm: ElementRef;
+  @ViewChild('search', { static: false }) searchTerm: ElementRef;
   products: IProduct[];
   brands: IBrand[];
   types: IType[];
