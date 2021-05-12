@@ -46,7 +46,7 @@ namespace API.Controllers
             var email = HttpContext.User.RetrieveEmailFromPrincipal();
             var order = await _orderService.GetOrderById(id, email);
             if(order == null) return NotFound(new ApiResponse(404));
-            return Ok(_mapper.Map<Order, OrderDto>(order));
+            return Ok(_mapper.Map<Order, OrderToReturnDto>(order));
         }
 
         [HttpGet("deliveryMethods")]
